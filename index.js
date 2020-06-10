@@ -18,4 +18,4 @@ const manager = new GiveawaysManager(bot, {
 bot.giveawaysManager = manager;
 bot.config = config;
 
-bot.login();
+bot.login(process.env.BOT_TOKEN);
