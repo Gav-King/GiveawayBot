@@ -2,7 +2,6 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const { GiveawaysManager } = require('discord-giveaways');
-const config = require('./config.json');
 
 const manager = new GiveawaysManager(bot, {
   storage: "./storage.json",
@@ -16,6 +15,5 @@ const manager = new GiveawaysManager(bot, {
 });
 
 bot.giveawaysManager = manager;
-bot.config = config;
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(process.env.token);
