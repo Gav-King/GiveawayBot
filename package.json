@@ -1,0 +1,27 @@
+{
+  "name": "giveawaybot",
+  "version": "1.0.0",
+  "description": "A giveaway bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavserve/GiveawayBot.git"
+  },
+  "author": "Gav",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gavserve/GiveawayBot/issues"
+  },
+  "homepage": "https://github.com/gavserve/GiveawayBot#readme",
+  "keywords": [],
+  "dependencies": {
+    "discord-giveaways": "^4.1.8",
+    "discord.js": "^12.2.0",
+    "ms": "^2.1.2"
+  }
+}
