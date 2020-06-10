@@ -1,0 +1,2 @@
+# GiveawayBot
+A giveaway bot!
