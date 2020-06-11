@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     let activeGiveaways = bot.giveawaysManager.giveaways.filter((g) => g.guildID === message.guild.id);
     let giveaways = activeGiveaways.filter((g) => !g.ended);
 
-    if (!activeGiveaways) {
+    if (!giveaways) {
       message.channel.send('There are currently no active giveaways in this server.');
       return;
     }
