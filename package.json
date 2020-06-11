@@ -23,6 +23,7 @@
     "discord-giveaways": "^4.1.8",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
-    "ms": "^2.1.2"
+    "ms": "^2.1.2",
+    "quick.db": "^7.1.1"
   }
 }
