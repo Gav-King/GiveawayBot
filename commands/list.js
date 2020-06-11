@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
     let activeGiveaways = bot.giveawaysManager.giveaways.filter((g) => g.guildID === message.guild.id);
     let giveaways = activeGiveaways.filter((g) => !g.ended);
-    let giveaways2 = activeGiveaways.map((g) => g.data.hostedBy.split('<@')[0].split('>')[0]);
+    let giveaways2 = activeGiveaways.map((g) => g.hostedBy.split('<@')[0].split('>')[0]);
     let user = bot.users.cache.get(giveaways2);
 
     if (giveaways.length === 0) {
