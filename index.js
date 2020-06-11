@@ -89,7 +89,7 @@ bot.on("message", async message => {
 
 require("./util/eventHandler")(bot);
 
-const manager = new GiveawaysManager(bot, {
+const manager = new GiveawaysManagerWithOwnDatabase(bot, {
   storage: false,
   updateCountdownEvery: 10000,
   default: {
