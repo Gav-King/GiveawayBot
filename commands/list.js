@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const ms = require('mis');
 
 module.exports.run = async (bot, message, args) => {
     let activeGiveaways = bot.giveawaysManager.giveaways.filter((g) => g.guildID === message.guild.id);
@@ -9,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
       return;
     }
 
-    message.channel.send(`${giveaways.map((g) => `**Prize**: ${g.data.prize} **Winners**: ${g.data.winnerCount}\n**Time Remaining**: ${g.endAt - g.startAt / 1000}\n**ID**: ${g.messageID}`).join("\n\n")}`);
+    message.channel.send(`${giveaways.map((g) => `**Prize**: ${g.data.prize} **Winners**: ${g.data.winnerCount}\n**Time Remaining**: ${ms(g.endAt - g.startAt)}\n**ID**: ${g.messageID}`).join("\n\n")}`);
 }
 
 module.exports.config = {
