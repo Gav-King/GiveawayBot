@@ -3,13 +3,15 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
     let activeGiveaways = bot.giveawaysManager.giveaways.filter((g) => g.guildID === message.guild.id);
     let giveaways = activeGiveaways.filter((g) => !g.ended);
+    let giveaways2 = activeGiveaways.map((g) => g.data.hostedBy.split('<@')[0].split('>')[0]);
+    let user = message.client.users.cache.get(giveaways2);
 
     if (giveaways.length === 0) {
       message.channel.send('No giveaways are currently active in this server.');
       return;
     }
 
-    message.channel.send(`${giveaways.map((g) => `**Prize**: ${g.data.prize} **Hosted By**: ${g.hostedBy.username}\n\n**ID**: ${g.messageID}`).join("\n\n")}`);
+    message.channel.send(`${giveaways.map((g) => `**Prize**: ${g.data.prize} **Hosted By**: ${g.data.hostedBy}\n\n**ID**: ${g.messageID}`).join("\n\n")}`);
 }
 
 module.exports.config = {
