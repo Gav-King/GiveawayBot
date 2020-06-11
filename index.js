@@ -59,4 +59,4 @@ const manager = new GiveawaysManager(bot, {
 bot.giveawaysManager = manager;
 bot.config = config;
 
-bot.login('NzIwMzc0NjAxNjQ5MDk0NjU2.XuFLCw.Xf1lDmjMoV8ds-JeTd5sdl4On_Y');
+bot.login(process.env.token);
