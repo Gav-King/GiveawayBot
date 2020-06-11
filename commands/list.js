@@ -3,7 +3,9 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
     let activeGiveaways = bot.giveawaysManager.getAllGiveaways();
 
-    message.channel.send(`${activeGiveaways}`);
+    let main = activeGiveaways.filter((giveaway) => giveaway.guildID === message.guild.id);
+
+    message.channel.send(`${main}`);
 }
 
 module.exports.config = {
