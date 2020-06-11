@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
-    let activeGiveaways = bot.giveawaysManager.giveaways.filter(x => x.guildID === message.guild.id && !x.ended);
+    let activeGiveaways = bot.giveawaysManager.giveaways.filter((x) => x.guildID === message.guild.id && !x.ended);
 
     message.channel.send(`${activeGiveaways.join('\n')}`);
 }
