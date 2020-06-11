@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!giveaways) {
       return message.channel.send('There are currently no active giveaways in this server.');
-    } else {
+    } else if (giveaways) {
 
     message.channel.send(`${giveaways.map((g) => `**Prize**: ${g.data.prize} **Hosted By**: ${g.hostedBy.username}\n\n**ID**: ${g.messageID}`).join("\n\n")}`);
   }
