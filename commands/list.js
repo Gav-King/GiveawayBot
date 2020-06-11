@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const ms = require('mis');
+const ms = require('ms');
 
 module.exports.run = async (bot, message, args) => {
     let activeGiveaways = bot.giveawaysManager.giveaways.filter((g) => g.guildID === message.guild.id);
