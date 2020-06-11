@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
       return;
     }
 
-    message.channel.send(`${giveaways.map((g) => `**Prize**: ${g.data.prize} **Hosted By**: ${g.data.hostedBy}\n\n**ID**: ${g.messageID}`).join("\n\n")}`);
+    message.channel.send(`${giveaways.map((g) => `**Prize**: ${g.data.prize} **Hosted By**: ${user.tag}\n\n**ID**: ${g.messageID}`).join("\n\n")}`);
 }
 
 module.exports.config = {
