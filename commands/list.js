@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
     let activeGiveaways = bot.giveawaysManager.getAllGiveaways();
 
-    message.channel.send(`${activeGiveaways.join('\n')}`);
+    message.channel.send(`${activeGiveaways}`);
 }
 
 module.exports.config = {
