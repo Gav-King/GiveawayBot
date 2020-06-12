@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
         setEndTimestamp: Date.now()
     })
     .then(() => {
-        message.channel.send(`The giveaway has ended.\n${giveaway}`);
+        message.channel.send(`The have ended the giveaway.\nPrize: **${giveaway.data.prize}**`);
     })
     .catch((e) => {
         if(e.startsWith(`The giveaway with the message ID ${giveaway.messageID} has already ended.`)){
