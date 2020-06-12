@@ -63,7 +63,7 @@ function startMessageCollectors(bot, message, args) {
           winnersCollector.stop();
           return;
         }
-        if (isNaN(winners) || (parseInt(winners) <= 0 || winners > 20 || isInteger(winners))) {
+        if (isNaN(winners) || (parseInt(winners) <= 0 || winners > 20 || !isInteger(winners))) {
           await msg.channel.send(`You didn't provide a valid amount of winners!`);
           winnersCollector.stop();
           return;
