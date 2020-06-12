@@ -85,6 +85,7 @@ function startMessageCollectors(bot, message, args) {
           prizeCollector.stop();
           return;
         } else {
+          msg.channel.send(`The giveaway has been created in ${channel.toString()}.`);
           prizeCollector.stop();
           bot.giveawaysManager.start(channel, {
             time: ms(duration),
