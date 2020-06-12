@@ -51,7 +51,7 @@ function startMessageCollectors(bot, message, args) {
           durationCollector.stop();
           return;
         } else {
-          msg.channel.send(`The giveaway will last ${duration}. How much winners do you want the giveaway to have?`);
+          msg.channel.send(`The giveaway will last ${duration}. How much winners do you want the giveaway to have?\nThe maximum amount of winners you can have is 20.`);
           durationCollector.stop();
         }
         let winnersFilter = m => m.author.id === message.author.id;
@@ -63,12 +63,12 @@ function startMessageCollectors(bot, message, args) {
           winnersCollector.stop();
           return;
         }
-        if (isNaN(winners) || (parseInt(winners) <= 0)) {
+        if (isNaN(winners) || (parseInt(winners) <= 0 || winners > 20)) {
           await msg.channel.send(`You didn't provide a valid amount of winners!`);
           winnersCollector.stop();
           return;
         } else {
-          msg.channel.send(`There will be ${winners} winners. Now, what do you want the prize to be?`)
+          msg.channel.send(`There will be ${winners} winner(s). Now, what do you want the prize to be?`)
           winnersCollector.stop();
         }
         let prizeFilter = m => m.author.id === message.author.id;
