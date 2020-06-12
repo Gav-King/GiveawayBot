@@ -58,12 +58,13 @@ function startMessageCollectors(bot, message, args) {
         let winnersCollector = new Discord.MessageCollector(message.channel, winnersFilter, { max: 999 });
     winnersCollector.on('collect', async msg => {
         let winners = msg.content;
+        let realWinners = Math.round(winners);
         if (msg.content.toLowerCase() === 'cancel') {
           msg.channel.send('The giveaway has been canceled.')
           winnersCollector.stop();
           return;
         }
-        if (isNaN(winners) || (parseInt(winners) <= 0 || winners > 20)) {
+        if (isNaN(realWinners) || (parseInt(realWinners) <= 0 || realWinners > 20)) {
           await msg.channel.send(`You didn't provide a valid amount of winners!`);
           winnersCollector.stop();
           return;
@@ -90,7 +91,7 @@ function startMessageCollectors(bot, message, args) {
           bot.giveawaysManager.start(channel, {
             time: ms(duration),
             prize: prize,
-            winnerCount: winners,
+            winnerCount: realWinners,
             hostedBy: bot.config.hostedBy ? message.author : null,
             messages: {
               giveaway: (bot.config.everybodyMention ? "@everyone\n\n" : "")+"🎉🎉 **GIVEAWAY** 🎉🎉",
