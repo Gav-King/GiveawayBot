@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const ms = require('ms');
 
 module.exports.run = async (bot, message, args) => {
-    if (!message.member.hasPermission('MANAGE_GUILD', 'MANAGE_MESSAGES')) {
+    if (!message.member.hasPermission('MANAGE_MESSAGES')) {
       message.channel.send('You don\'t have permission to use this command.');
       return;
     }
