@@ -42,8 +42,8 @@ module.exports.run = async (bot, message, args) => {
       winnerCount: giveawayWinners,
       hostedBy: bot.config.hostedBy ? message.author : null,
       messages: {
-        giveaway: (bot.config.everybodyMention ? "@everyone\n\n" : "")+"🎉🎉 **GIVEAWAY** 🎉🎉",
-        giveawayEnded: (bot.config.everyoneMention ? "@everyone\n\n" : "")+"🎉🎉 **GIVEAWAY ENDED** 🎉🎉",
+        giveaway: (bot.config.everybodyMention ? "@everyone\n\n" : "")+"<:GiveawayEmoji:721476177574756404> **GIVEAWAY** <:GiveawayEmoji:721476177574756404>",
+        giveawayEnded: (bot.config.everyoneMention ? "@everyone\n\n" : "")+"<:GiveawayEmoji:721476177574756404> **GIVEAWAY ENDED** <:GiveawayEmoji:721476177574756404>",
         timeRemaining: "Time remaining: **{duration}**",
         inviteToParticipate: "React with 🎉",
         winMessage: "Congratulations, {winners}. You won the **{prize}**!",
