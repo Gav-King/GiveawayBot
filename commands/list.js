@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
       return;
     }
 
-    message.channel.send(`<:GiveawayEmoji:721476177574756404> **Active Giveaways**\n<:GiveawayEmoji:721476177574756404>${giveaways.map((g) => `**Prize**: ${g.data.prize} **|** **Winners**: ${g.data.winnerCount}\n**ID**: ${g.messageID}\n**Channel**: <#${g.channelID}>`).join("\n\n")}`);
+    message.channel.send(`<:GiveawayEmoji:721476177574756404> **Active Giveaways**\n\n<:GiveawayEmoji:721476177574756404>${giveaways.map((g) => `**Prize**: ${g.data.prize} **|** **Winners**: ${g.data.winnerCount}\n**ID**: ${g.messageID}\n**Channel**: <#${g.channelID}>`).join("\n\n")}`);
 }
 
 module.exports.config = {
