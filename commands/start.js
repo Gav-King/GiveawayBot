@@ -35,6 +35,7 @@ module.exports.run = async (bot, message, args) => {
       return;
     }
 
+    message.channel.send(`<:GiveawayEmoji:721476177574756404> You have created a giveaway in ${giveawayChannel.toString()}.`)
     bot.giveawaysManager.start(giveawayChannel, {
       time: ms(giveawayDuration),
       prize: giveawayPrize,

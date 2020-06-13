@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send('You don\'t have permission to use this command.');
       return;
     }
-    message.channel.send('What channel do you want your giveaway to be in?\nYou can cancel the giveaway at any time by saying \`cancel\`.');
+    message.channel.send('<:GiveawayEmoji:721476177574756404> What channel do you want your giveaway to be in?\nYou can cancel the giveaway at any time by saying \`cancel\`.');
     await startMessageCollectors(bot, message, args);
 }
 
@@ -34,7 +34,7 @@ function startMessageCollectors(bot, message, args) {
         await channelCollector.stop();
         return;
       } else {
-        msg.channel.send(`The giveaway will be in ${channel.toString()}. How long do you want the giveaway to last?\nExample: 10m`)
+        msg.channel.send(`<:GiveawayEmoji:721476177574756404> The giveaway will be in ${channel.toString()}. How long do you want the giveaway to last?\nExample: 10m`)
         channelCollector.stop();
       }
       let durationFilter = m => m.author.id === message.author.id;
@@ -51,7 +51,7 @@ function startMessageCollectors(bot, message, args) {
           durationCollector.stop();
           return;
         } else {
-          msg.channel.send(`The giveaway will last ${duration}. How much winners do you want the giveaway to have?\nThe maximum amount of winners you can have is 20.`);
+          msg.channel.send(`<:GiveawayEmoji:721476177574756404> The giveaway will last ${duration}. How much winners do you want the giveaway to have?\nThe maximum amount of winners you can have is 20.`);
           durationCollector.stop();
         }
         let winnersFilter = m => m.author.id === message.author.id;
@@ -69,7 +69,7 @@ function startMessageCollectors(bot, message, args) {
           winnersCollector.stop();
           return;
         } else {
-          msg.channel.send(`There will be ${trueWinners} winner(s). Now, what do you want the prize to be?`)
+          msg.channel.send(`<:GiveawayEmoji:721476177574756404> There will be ${trueWinners} winner(s). Now, what do you want the prize to be?`)
           winnersCollector.stop();
         }
         let prizeFilter = m => m.author.id === message.author.id;
@@ -86,7 +86,7 @@ function startMessageCollectors(bot, message, args) {
           prizeCollector.stop();
           return;
         } else {
-          msg.channel.send(`The giveaway has been created in ${channel.toString()}.`);
+          msg.channel.send(`<:GiveawayEmoji:721476177574756404> The giveaway has been created in ${channel.toString()}.`);
           prizeCollector.stop();
           bot.giveawaysManager.start(channel, {
             time: ms(duration),
