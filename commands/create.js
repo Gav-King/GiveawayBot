@@ -52,7 +52,7 @@ function startMessageCollectors(bot, message, args) {
           durationCollector.stop();
           return;
         } else {
-          msg.channel.send(`<:GiveawayEmoji:721476177574756404> The giveaway will last **${prettyMilliseconds(duration, {verbose: true})}**. How much winners do you want the giveaway to have?\nThe maximum amount of winners you can have is 20.`);
+          msg.channel.send(`<:GiveawayEmoji:721476177574756404> The giveaway will last **${prettyMilliseconds(ms(duration), {verbose: true})}**. How much winners do you want the giveaway to have?\nThe maximum amount of winners you can have is 20.`);
           durationCollector.stop();
         }
         let winnersFilter = m => m.author.id === message.author.id;
